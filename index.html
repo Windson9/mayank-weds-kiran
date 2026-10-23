@@ -157,7 +157,11 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 .family h3{font-family:var(--script);font-weight:400;font-size:clamp(1.5rem,4.5vw,2.2rem);color:var(--gold-light);line-height:1.2;margin-bottom:16px}
 .family ul{list-style:none}
 .family li{font-size:clamp(.92rem,2.6vw,1.2rem);line-height:1.4;padding:5px 0}
-.kids{margin-top:60px}
+.extended-family{margin:46px auto 0;text-align:center}
+.extended-family h3{font-family:var(--script);font-weight:400;font-size:clamp(1.5rem,4.5vw,2.2rem);color:var(--gold-light);line-height:1.2;margin-bottom:12px}
+.extended-family ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 36px}
+.extended-family li{font-size:clamp(.95rem,2.6vw,1.2rem);line-height:1.4}
+.kids{margin-top:46px}
 .kids .kids-line{font-style:italic;font-size:1.2rem;opacity:.9}
 .kids .kids-names{font-weight:500;font-size:clamp(2.1rem,6vw,3.2rem);color:var(--gold-light);line-height:1.15;margin-top:6px;animation:breathe 4s ease-in-out infinite}
 .floaty{position:absolute;pointer-events:none;opacity:.95}
@@ -535,6 +539,10 @@ footer{padding:28px;text-align:center;font-size:.85rem;letter-spacing:.2em;color
         <ul id="cousins"></ul>
       </div>
     </div>
+    <div class="extended-family reveal">
+      <h3 data-bind="extendedFamilyTitle"></h3>
+      <ul id="extendedFamily"></ul>
+    </div>
     <div class="kids reveal">
       <p class="kids-line" data-bind="kidsLine"></p>
       <p class="kids-names" data-bind="kids"></p>
@@ -648,6 +656,11 @@ const CONFIG = {
     "Jalpa & Manish Lalwani",
     "Amit Ukani",
     "Chirag Ukani"
+  ],
+  extendedFamilyTitle: "Warmest Wishes From",
+  extendedFamily: [
+    "Chatrabhuj Ukani's Family",
+    "Jamnadas Ukani's Family"
   ],
   kidsLine: "Our little sunshines",
   kids: "Niharika & Vamika",
@@ -1257,6 +1270,7 @@ document.getElementById("memories").innerHTML = CONFIG.memories.map((m, i) =>
 document.getElementById("inviteLines").innerHTML = CONFIG.inviteLines.map(l => `<p>${l}</p>`).join("");
 document.getElementById("elders").innerHTML = CONFIG.elders.map(n => `<li>${n}</li>`).join("");
 document.getElementById("cousins").innerHTML = CONFIG.cousins.map(n => `<li>${n}</li>`).join("");
+document.getElementById("extendedFamily").innerHTML = (CONFIG.extendedFamily || []).map(n => `<li>${n}</li>`).join("");
 
 /* ---- Event pages ---- */
 let artCount = 0;
