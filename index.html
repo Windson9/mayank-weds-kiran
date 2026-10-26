@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://windson9.github.io/mayank-weds-kiran/art/wedding-invite-preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Gurmukhi:wght@500;600&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#1c2d50; --navy-deep:#121e38; --gold:#c9a54e; --gold-light:#ecd393; --cream:#f7eed6;
@@ -144,7 +144,11 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 .blessings{--bg:transparent;color:var(--cream)}
 .ganesha{width:clamp(140px,26vw,176px);margin:0 auto 18px;stroke:var(--gold-light);fill:none;stroke-width:1.65;stroke-linejoin:round;filter:drop-shadow(0 6px 18px rgba(236,211,147,.2))}
 .draw *:nth-child(5n){transition-delay:.68s}
-.mantra{font-family:var(--deva);color:var(--gold-light);font-size:1.3rem;margin-bottom:34px}
+.mantra-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;width:100%;font-family:var(--deva);color:var(--gold-light);font-size:clamp(.95rem,2.7vw,1.3rem);margin-bottom:34px}
+.mantra-row .m-left{text-align:left;white-space:nowrap}
+.mantra-row .m-center{text-align:center;white-space:nowrap}
+.mantra-row .m-right{text-align:right;white-space:nowrap}
+.ik-onkar{font-family:"Noto Serif Gurmukhi",serif;font-weight:600;margin-right:3px}
 .blessings p{font-size:1.15rem}
 .rule{display:block;width:60px;height:1px;background:var(--gold);margin:26px auto}
 .memory{font-style:italic;opacity:.92;margin:6px auto;max-width:640px}
@@ -524,7 +528,11 @@ footer{padding:28px;text-align:center;font-size:.85rem;letter-spacing:.2em;color
       <path pathLength="1" d="M68.71 94.19Q68.71 92.58 73.39 91.13L78.06 89.68"/>
       <path pathLength="1" d="M63.55 96.45Q62.58 98.39 61.29 98.39Q60.00 98.39 59.52 97.90Q59.03 97.42 59.03 96.29Q59.03 95.16 59.84 94.35Q60.65 93.55 62.10 93.06Q63.55 92.58 65.97 92.58L68.39 92.58"/>
     </svg>
-    <p class="mantra reveal">ॐ श्री गणेशाय नमः</p>
+    <div class="mantra-row reveal">
+      <span class="m-left"><span class="ik-onkar">ੴ</span> वाहेगुरु</span>
+      <span class="m-center">ॐ श्री गणेशाय नमः</span>
+      <span class="m-right">श्री जय कुलदेवी माँ</span>
+    </div>
     <div id="memories"></div>
     <span class="rule reveal"></span>
     <h2 class="parents reveal" data-bind="parents"></h2>
